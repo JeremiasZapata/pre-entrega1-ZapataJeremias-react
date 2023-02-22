@@ -1,6 +1,7 @@
 import logo from "./images/asus_logo.png"
 import React from 'react'
 import CartWidget from "./CartWidget";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -9,20 +10,20 @@ const NavBar = () => {
                 <div className="col">
                     <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid">
-                            <a className="navbar-brand" href={"/"}> <img src={logo} alt="logo asus azul" width={"90"}/> </a>
+                            <Link className="navbar-brand" to={"/"}> <img src={logo} alt="logo asus azul" width={"90"}/> </Link>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <a className="nav-link" href={"/Gaming"}>Gaming</a>
+                                        <NavLink className="nav-link" activeClassName={"active"} to={"/category/Gaming/"}>Gaming</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href={"/Design"}>Design</a>
+                                        <NavLink className="nav-link" activeClassName={"active"} to={"/category/Design/"}>Design</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href={"/Student"}>Student</a>
+                                        <NavLink className="nav-link" activeClassName={"active"} to={"/category/Student/"}>Student</NavLink>
                                     </li>
                                 </ul>
                             </div>
