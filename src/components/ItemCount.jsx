@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ItemCount = ({stock}) => {
     const[items, setItems] = useState(1);
@@ -21,6 +21,11 @@ const ItemCount = ({stock}) => {
             console.log("Added: " + items + " products to chart");
         }
     }
+
+    useEffect(() => {
+        setItemStock(stock);
+
+    }, [stock])
 
 
 
