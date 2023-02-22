@@ -17,7 +17,7 @@ function App() {
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
         </Routes>
       <Destacado />
-      <ItemListContainer />
+      {/* <ItemListContainer /> */}
       <PromoAsus />   
       <Footer /> 
     </div>
