@@ -14,6 +14,7 @@ En este caso, desarrollamos una aplicación consistente en una tienda virtual de
 
 Click [here](https://drive.google.com/file/d/1dd1eEA67jre8e1a0YLh1ZCXpdpMivjFR/view?usp=share_link)
 
+![Asus](https://user-images.githubusercontent.com/113348027/220895864-86253af9-0ee8-4b9d-90ad-c70def0986b6.gif)
 
 ### **Tencologías utilizadas:**
 * HTML
