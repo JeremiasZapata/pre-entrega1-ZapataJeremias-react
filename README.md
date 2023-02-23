@@ -12,7 +12,7 @@ En este caso, desarrollamos una aplicación consistente en una tienda virtual de
 **Así es como funciona:**
 
 
-poner gif
+Click [here](https://drive.google.com/file/d/1dd1eEA67jre8e1a0YLh1ZCXpdpMivjFR/view?usp=share_link)
 
 
 ### **Tencologías utilizadas:**
