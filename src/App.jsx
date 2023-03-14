@@ -1,4 +1,3 @@
-import Destacado from "./components/Destacado";
 import Footer from "./components/Footer";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
@@ -18,8 +17,6 @@ function App() {
           <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           <Route path={"*"} element={< Error404 />} />
         </Routes>
-      <Destacado />
-      {/* <ItemListContainer /> */}
       <PromoAsus />   
       <Footer /> 
     </div>
