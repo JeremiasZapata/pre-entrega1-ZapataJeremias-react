@@ -14,14 +14,15 @@ const Cart = () => {
     const generateOrder = () => {
         const buyer = { name: name, email: email, phone: Phone };
         const fecha = new Date();
-        const date = `${fecha.getFullYear()}-${fecha.getMonth + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
-        const order = { buyer: buyer, items: cart, date: date, total: cartTotal() }
+        
+        const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+        const order = { buyer: buyer, items: cart, date: date, total: cartSum() }
 
         const db = getFirestore();
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, order).then(data => {
             setOrderId(data.id);
-            clear();
+            
         })
     }
     if (cartTotal() === 0) {
@@ -29,7 +30,7 @@ const Cart = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        <form>
+                        {/* <form>
                             <div className="mb-3">
                                 <label htmlFor="name" className="form-label">Name</label>
                                 <input type="text" className="form-control" id="nombre" onInput={(e) => {
@@ -54,7 +55,7 @@ const Cart = () => {
 
 
                             <button type="button" className="btn btn-primary" onClick={generateOrder} >Generate order</button>
-                        </form>
+                        </form> */}
                     </div>
                     <div className="col-md-8">
                         <div className="alert alert-warning text-center" role="alert">
@@ -72,6 +73,34 @@ const Cart = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
+                    <div className="col-md-3">
+                    <form>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Name</label>
+                            <input type="text" className="form-control" id="nombre" onInput={(e) => {
+                                setName(e.target.value);
+                            }} />
+
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">email</label>
+                            <input type="text" className="form-control" id="email" onInput={(e) => {
+                                setEmail(e.target.value);
+                            }} />
+
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="Phone" className="form-label">Phone</label>
+                            <input type="text" className="form-control" id="Phone" onInput={(e) => {
+                                setPhone(e.target.value);
+                            }} />
+
+                        </div>
+
+
+                        <button type="button" className="btn btn-primary" onClick={generateOrder} >Generate order</button>
+                    </form>
+                    </div>
                     <h1 className="text-center" >Products</h1>
                     <table className="table">
                         <tr>
@@ -110,8 +139,8 @@ const Cart = () => {
             <div className="row">
                 <div className="col-md-12">
                     {orderId ? <div class="alert alert-primary" role="alert">
-                       <h3>Thanks for buying</h3>
-                       <p>This is your buy ID: <b>{orderId}</b></p>
+                        <h3>Thanks for buying</h3>
+                        <p>This is your buy ID: <b>{orderId}</b></p>
                     </div> : ""}
 
                 </div>
